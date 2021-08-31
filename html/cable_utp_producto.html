@@ -42,24 +42,70 @@
     <main>
 
         <body>
-            <H1 class="black-text text-lighten-3 center-align">Categoria: HUB</H1>
+            <H1 class="black-text text-lighten-3 center-align">Detalle de producto</H1>
             <div class="row">
                 <div class="col s12 m4">
                   <div class="card">
                     <div class="card-image">
-                      <img src="../resources/img/productos/60bacf4928afd.jpg">
-                      <a class="btn-floating halfway-fab waves-effect waves-light red" href="../html/hub_producto.html"><i class="material-icons">add</i></a>
+                      <img src="../resources/img/productos/60bb1144dc36b.jpg">
                     </div>
                     <div class="card-content">
-                        <span class="card-title">Hub 100</span>
-                      <p>Precio(US$) 61.99</p>
+                        <span class="card-title">MOOKEERF N a SMA Cable</span>
+                      <p>Precio(US$) 50</p>
+                      <div class="card-action">
+                        <!-- Formulario para agregar el producto al carrito de compras -->
+                        <form method="post" id="shopping-form">
+                            <!-- Campo oculto para asignar el id del producto -->
+                            <input type="hidden" id="id_producto" name="id_producto" />
+                            <div class="row center">
+                                <div class="input-field col s12 m6">
+                                    <i class="material-icons prefix">list</i>
+                                    <input type="number" id="cantidad_producto" name="cantidad_producto" min="1"
+                                        class="validate" required />
+                                    <label for="cantidad_producto">Cantidad</label>
+                                </div>
+                                <div class="input-field col s12 m6">
+                                    <button type="submit" class="btn waves-effect waves-light blue tooltipped"
+                                        data-tooltip="Agregar al carrito"><i
+                                            class="material-icons">add_shopping_cart</i></button>
+                                            
+                                    <a href="#" onclick="openCreateDialog()"
+                                        class="btn waves-effect waves-light blue tooltipped"
+                                        data-tooltip="Agregar valoracion"><i class="material-icons">star_border</i></a>
+                                </div>
+        
+                            </div>
+                    </div>
+                    
+                    </form>
+        
+                    <div>
+                        <div class="row center-align">
+                            <h4>Valoraciones del producto</h4>
+                        </div>
+                        <!-- Tabla para mostrar los registros existentes -->
+                        <table class="striped responsive-table">
+                            <!-- Cabeza de la tabla para mostrar los títulos de las columnas -->
+                            <thead>
+                                <tr>
+                                    <th>Cliente</th>
+                                    <th>Producto</th>
+                                    <th>Calificación</th>
+                                    <th>Comentario</th>
+                                    <th class="hide">Estado comentario</th>
+                                </tr>
+                            </thead>
+                            <!-- Cuerpo de la tabla para mostrar un registro por fila -->
+                            <tbody id="tbody-rows">
+                            </tbody>
+                        </table>
+        
                     </div>
                   </div>
                 </div>
+                
               </div>
-        </body>
-
-
+            
     </main>
     <!--Se crea el helper del footer publico-->
     <footer class="page-footer #2962ff blue accent-4">
