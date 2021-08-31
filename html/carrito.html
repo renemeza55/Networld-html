@@ -1,9 +1,9 @@
 <!DOCTYPE html>
-<html>
+<html lang="es">
 <!--Se crea el helper del header privado-->
 
 <head>
-    <!--Import Google Icon Font-->
+    <meta charset="utf-8">
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
     <title>NetWorld - ' . $title . '</title>
@@ -21,22 +21,22 @@
         <div class="navbar-fixed">
             <nav class="#2962ff blue accent-4">
                 <div class="nav-wrapper">
-                    <a href="index_publico.php" class="brand-logo"><img src="../resources/logo.jpg" height="60"></a>
+                    <a href="index.html" class="brand-logo"><img src="../resources/logo.jpg" height="60"></a>
                     <a href="#" data-target="mobile" class="sidenav-trigger"><i class="material-icons">menu</i></a>
                     <ul class="right hide-on-med-and-down">
-                        <li><a href="index.php"><i class="material-icons left">add_shopping_cart</i>Carrito</a></li>
-                        <li><a href="index_publico.php"><i class="material-icons left">view_module</i>Catálogo</a></li>
-                        <li><a href="Registrarse.php"><i class="material-icons left">person</i>Crear cuenta</a></li>
-                        <li><a href="login.php"><i class="material-icons left">login</i>Iniciar sesión</a></li>
+                        <li><a href="carrito.html"><i class="material-icons left">add_shopping_cart</i>Carrito</a></li>
+                        <li><a href="index.html"><i class="material-icons left">view_module</i>Catálogo</a></li>
+                        <li><a href="register.html"><i class="material-icons left">person</i>Crear cuenta</a></li>
+                        <li><a href="login.html"><i class="material-icons left">login</i>Iniciar sesión</a></li>
                     </ul>
                 </div>
             </nav>
         </div>
         <ul class="sidenav" id="mobile">
-            <li><a href="index.php"><i class="material-icons left">add_shopping_cart</i>Carrito</a></li>
-            <li><a href="index.php"><i class="material-icons left">view_module</i>Catálogo</a></li>
-            <li><a href="signin.php"><i class="material-icons left">person</i>Crear cuenta</a></li>
-            <li><a href="login.php"><i class="material-icons left">login</i>Iniciar sesión</a></li>
+            <li><a href="carrito.html"><i class="material-icons left">add_shopping_cart</i>Carrito</a></li>
+            <li><a href="index.html"><i class="material-icons left">view_module</i>Catálogo</a></li>
+            <li><a href="register.html"><i class="material-icons left">person</i>Crear cuenta</a></li>
+            <li><a href="login.html"><i class="material-icons left">login</i>Iniciar sesión</a></li>
         </ul>
     </header>
     <main>
@@ -59,16 +59,20 @@
                 </tbody>
             </table>
             <!-- Fila para mostrar el monto total a pagar -->
-            <div class="row right-align">
-                <p>TOTAL A PAGAR (US$) <b id="pago"></b></p>
-            </div>
+
             <!-- Fila para mostrar un botón que finaliza el pedido -->
             <div class="row right-align">
-                <button type="button" onclick="finishOrder()" class="btn waves-effect blue tooltipped" data-tooltip="Finalizar pedido"><i class="material-icons">payment</i></button>
+                <button type="button" class="" data-tooltip="Finalizar pedido"><i class="material-icons"></i></button>
+            </div>
+            <div class="row right-align">
+                <button type="button" class="btn waves-effect blue tooltipped" data-tooltip="Finalizar pedido"><i class="material-icons">payment</i></button>
             </div>
             <!-- Fila para mostrar un enlace con la dirección de la página web principal para seguir comprando -->
             <div class="row right-align">
-                <a href="index_publico.php" class="btn waves-effect indigo tooltipped" data-tooltip="Seguir comprando"><i class="material-icons">store</i></a>
+                <a href="index.html" class="btn waves-effect indigo tooltipped" data-tooltip="Seguir comprando"><i class="material-icons">store</i></a>
+            </div>
+            <div class="row right-align">
+                <p>TOTAL A PAGAR (US$) <b id="pago"></b></p>
             </div>
         </div>
         
