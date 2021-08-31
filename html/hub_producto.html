@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html>
+<!--Se crea el helper del header privado-->
+
+<head>
+    <!--Import Google Icon Font-->
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+    <title>NetWorld - ' . $title . '</title>
+    <!--Import materialize.css-->
+    <link type="text/css" rel="stylesheet" href="../css/materialize.min.css" media="screen,projection" />
+    <link type="text/css" rel="stylesheet" href="../css/styles.css" media="screen,projection" />
+    <!--Let browser know website is optimized for mobile-->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <link rel="shotcut icon" href="../resources/logo.jpg" type="image/x-icon">
+</head>
+
+<body>
+    <header>
+        <div class="navbar-fixed">
+            <nav class="#2962ff blue accent-4">
+                <div class="nav-wrapper">
+                    <a href="index_publico.php" class="brand-logo"><img src="../resources/logo.jpg" height="60"></a>
+                    <a href="#" data-target="mobile" class="sidenav-trigger"><i class="material-icons">menu</i></a>
+                    <ul class="right hide-on-med-and-down">
+                        <li><a href="index.php"><i class="material-icons left">add_shopping_cart</i>Carrito</a></li>
+                        <li><a href="index_publico.php"><i class="material-icons left">view_module</i>Catálogo</a></li>
+                        <li><a href="Registrarse.php"><i class="material-icons left">person</i>Crear cuenta</a></li>
+                        <li><a href="login.php"><i class="material-icons left">login</i>Iniciar sesión</a></li>
+                    </ul>
+                </div>
+            </nav>
+        </div>
+        <ul class="sidenav" id="mobile">
+            <li><a href="index.php"><i class="material-icons left">add_shopping_cart</i>Carrito</a></li>
+            <li><a href="index.php"><i class="material-icons left">view_module</i>Catálogo</a></li>
+            <li><a href="signin.php"><i class="material-icons left">person</i>Crear cuenta</a></li>
+            <li><a href="login.php"><i class="material-icons left">login</i>Iniciar sesión</a></li>
+        </ul>
+    </header>
+    <main>
+
+        <body>
+            <H1 class="black-text text-lighten-3 center-align">Detalle de producto</H1>
+            <div class="row">
+                <div class="col s12 m4">
+                  <div class="card">
+                    <div class="card-image">
+                        <img class="activator" src="../resources/img/cards/hub3_2.jpg" height="400">
+                    </div>
+                    <div class="card-content">
+                        <span class="card-title">DUSUN Hub inteligente Zigbee BLE Zwave Wifi</span>
+                      <p>Precio(US$) 50</p>
+                      <p>Este dispositivo es compatible con integración</p>
+                      <div class="card-action">
+                        <!-- Formulario para agregar el producto al carrito de compras -->
+                        <form method="post" id="shopping-form">
+                            <!-- Campo oculto para asignar el id del producto -->
+                            <input type="hidden" id="id_producto" name="id_producto" />
+                            <div class="row center">
+                                <div class="input-field col s12 m6">
+                                    <i class="material-icons prefix">list</i>
+                                    <input type="number" id="cantidad_producto" name="cantidad_producto" min="1"
+                                        class="validate" required />
+                                    <label for="cantidad_producto">Cantidad</label>
+                                </div>
+                                <div class="input-field col s12 m6">
+                                    <button type="submit" class="btn waves-effect waves-light blue tooltipped"
+                                        data-tooltip="Agregar al carrito"><i
+                                            class="material-icons">add_shopping_cart</i></button>
+                                            
+                                    <a href="#" onclick="openCreateDialog()"
+                                        class="btn waves-effect waves-light blue tooltipped"
+                                        data-tooltip="Agregar valoracion"><i class="material-icons">star_border</i></a>
+                                </div>
+        
+                            </div>
+                    </div>
+                    
+                    </form>
+        
+                    <div>
+                        <div class="row center-align">
+                            <h4>Valoraciones del producto</h4>
+                        </div>
+                        <!-- Tabla para mostrar los registros existentes -->
+                        <table class="striped responsive-table">
+                            <!-- Cabeza de la tabla para mostrar los títulos de las columnas -->
+                            <thead>
+                                <tr>
+                                    <th>Cliente</th>
+                                    <th>Producto</th>
+                                    <th>Calificación</th>
+                                    <th>Comentario</th>
+                                    <th class="hide">Estado comentario</th>
+                                </tr>
+                            </thead>
+                            <!-- Cuerpo de la tabla para mostrar un registro por fila -->
+                            <tbody id="tbody-rows">
+                            </tbody>
+                        </table>
+        
+                    </div>
+                  </div>
+                </div>
+                
+              </div>
+            
+    </main>
+    <!--Se crea el helper del footer publico-->
+    <footer class="page-footer #2962ff blue accent-4">
+        <div class="container">
+            <div class="row">
+                <div class="col l6 s12">
+                    <h5 class="white-text">Contactanos</h5>
+                    <h5 id="logo-container" href="#" class="brand-logo">
+                        <i class="material-icons">facebook</i>
+                        NetWorldsv
+                        </a>
+                        <h5 id="logo-container" href="#" class="brand-logo"></h5>
+                        <i class="material-icons">linked_camera</i>
+                        NetWorldsv
+                        </a>
+                        <h5 id="logo-container" href="#" class="brand-logo"></h5>
+                        <i class="material-icons">mail</i>
+                        www.support@networld.com
+                        </a>
+                        <a href="mision">Misión</a>
+                </div>
+                <div class="col l4 offset-l2 s12">
+                    <h5 class="white-text">Otros</h5>
+                    <h5 id="logo-container" href="#" class="brand-logo"></h5>
+                    <i class="material-icons">landscape</i>
+                    NetWorld
+                    </a>
+                    <h5 id="logo-container" href="" class="brand-logo"></h5>
+                    <i class="material-icons">dashboard</i>
+                    <a href="../../views/dashboard/dashboard.php">Dashboard(privado)</a>
+                </div>
+            </div>
+        </div>
+        <div class="footer-copyright">
+            <div class="container center">
+                © 2021 Copyright Text
+            </div>
+        </div>
+    </footer>
+    <script type="text/javascript" src="../js/materialize.min.js"></script>
+    <script type="text/javascript" src="../js/sweetalert.min.js"></script>
+    <script type="text/javascript" src="../js/iniciar.js"></script>
+</body>
+
+</html>
