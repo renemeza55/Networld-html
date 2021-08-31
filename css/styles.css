@@ -1,0 +1,36 @@
+body {
+    display: flex;
+    min-height: 100vh;
+    flex-direction: column;
+  }
+
+  main {
+    flex: 1 0 auto;
+  }
+
+  .icon.block{
+      padding: 0 15px;
+  }
+  .icon.block .material-icon{
+      font-size: inherit;
+  }
+  .slider .btn{
+      margin-top: 20px;
+      padding: 0 50px;
+      border-radius: 20px;
+  }
+
+  .btnIngresar{
+    float:none;
+	text-align:center;
+  }
+
+  .nav2{
+      text-align: center;
+      float: none;
+  }
+
+  .blogin{
+      background-size: cover;
+  }
+
