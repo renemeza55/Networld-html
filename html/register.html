@@ -42,57 +42,77 @@
     </header>
     <main>
 
-        <body>
-            <!-- Se elabora el slider del index  -->
-            <title>NetWorld | Inicio</title>
-            <H1 class="black-text text-lighten-3 center-align">NetWorld | Eleva tu nivel</H1>
-            <h5 class="black-text text-lighten-3 center-align">Nuestras ultimas ofertas!!!!</h5>
-            <div class="slider">
-                <ul class="slides">
-                    <li>
-                        <img src="../../resources/img/slider/index1.jpg"> <!-- random image -->
-                        <div class="caption center-align">
-                            <h1 class="blue-text text-lighten-3">Router ASUS GAMING RT-AX82U</h3>
-                                <h5 class="blue-text text-lighten-3">ASUS presenta su nuevo ROUTER GAMING, ya disponible
-                                    en nuestra tienda.</h5>
-                                <a href="#" class="btn btn-large white black-text waves-effect waves-grey">Más
-                                    información</a>
-                        </div>
-                    </li>
-                    <li>
-                        <img src="../../resources/img/slider/index2.jpg"> <!-- random image -->
-                        <div class="caption left-align">
-                            <h1 class="grey-text text-lighten-3">Switch D-link DES 105</h3>
-                                <h5 class="grey-text text-lighten-3">El switch más demandado por nuestro clientes esta
-                                    de regreso.</h5>
-                                <a href="#" class="btn btn-large white black-text waves-effect waves-grey">Más
-                                    información</a>
-                        </div>
-                    </li>
-                    <li>
-                        <img src="../../resources/img/slider/index3.jpg"> <!-- random image -->
-                        <div class="caption right-align">
-                            <h3 class="grey-text text-lighten-3">Hub NetGear</h3>
-                            <h5 class="grey-text text-lighten-3">YA disponible el nuevo HUB para expandir tu red en tu
-                                hogar.</h5>
-                            <a href="../views/public/hub_pasivo.php"
-                                class="btn btn-large white black-text waves-effect waves-grey">Más información</a>
-                        </div>
-                    </li>
+        <h4 class="center-align indigo-text">Regístrate como cliente</h4>
+<!-- Formulario para registrar al primer usuario del dashboard -->
+<form method="post" id="register-form">
+ <!-- Campo oculto para asignar el token del reCAPTCHA -->
+ <input type="hidden" id="g-recaptcha-response" name="g-recaptcha-response"/>
+    <div class="row">
+        <div class="input-field col s12 m6">
+          	<i class="material-icons prefix">person</i>
+          	<input id="nombres" type="text" name="nombres" class="validate" required/>
+          	<label for="nombres">Nombres</label>
+        </div>
+        <div class="input-field col s12 m6">
+            <i class="material-icons prefix">person</i>
+            <input id="apellidos" type="text" name="apellidos" class="validate" required/>
+            <label for="apellidos">Apellidos</label>
+        </div>
+        <div class="input-field col s12 m6">
+            <i class="material-icons prefix">email</i>
+            <input id="correo_cliente" type="email" name="correo_cliente" class="validate" required/>
+            <label for="correo">Correo</label>
+        </div>
+        <div class="input-field col s12 m6">
+            <i class="material-icons prefix">person_pin</i>
+            <input id="alias" type="text" name="alias" class="validate" required/>
+            <label for="alias">Usuario</label>
+        </div>
+        <div class="input-field col s12 m6">
+            <i class="material-icons prefix">security</i>
+            <input id="clave1" type="password" name="clave1" class="validate" required/>
+            <label for="clave1">Contrseña</label>
+        </div>
+        <div class="input-field col s12 m6">
+            <i class="material-icons prefix">security</i>
+            <input id="clave2" type="password" name="clave2" class="validate" required/>
+            <label for="clave2">Confirmar contraseña</label>
+        </div>
+        <div class="input-field col s12 m6">
+            <i class="material-icons prefix">perm_identity</i>
+            <input id="dui_c" type="text" name="dui_c" placeholder="00000000-0" pattern="[0-9]{8}[-][0-9]{1}" class="validate" required/>
+            <label for="dui_c">DUI</label>
+        </div>
+        <div class="input-field col s12 m6">
+            <i class="material-icons prefix">map</i>
+            <input id="direccion" type="text" name="direccion" class="validate" required/>
+            <label for="direccion">Dirección</label>
+        </div>
+        <div class="input-field col s12 m6">
+            <i class="material-icons prefix">cake</i>
+            <input id="fecha_nacimiento" type="date" name="fecha_nacimiento" class="validate" required/>
+            <label for="fecha_nacimiento">Fecha de nacimiento</label>
+        </div>
+        <div class="input-field col s12 m6">
+            <i class="material-icons prefix">phone</i>
+            <input id="telefono" type="text" name="telefono" class="validate" required/>
+            <label for="telefono">Telefono</label>
+        </div>
+        <label class="center-align col s12">
+                <input type="checkbox" id="condicion" name="condicion" required/>
+                <span>Acepto <a href="#terminos" class="modal-trigger">términos y condiciones</a></span>
+            </label>
+      </div>
+    </div>
+    <div class="row center-align">
+ 	    <button type="submit" class="btn waves-effect blue tooltipped" data-tooltip="Registrar"><i class="material-icons">send</i></button>
+    </div>
+</form>
 
-                </ul>
-                </section>
+<!-- Importación del archivo para que funcione el reCAPTCHA. Para más información https://developers.google.com/recaptcha/docs/v3 -->
+        <script type="text/javascript" src="https://www.google.com/recaptcha/api.js?render=6LdBzLQUAAAAAJvH-aCUUJgliLOjLcmrHN06RFXT"></script>
 
-
-
-                <!-- Contenedor para mostrar el catálogo de tipos de producto -->
-                <div class="container">
-                    <!-- Título del contenido principal -->
-                    <h4 class="center indigo-text" id="title">Nuestro catálogo</h4>
-                    <!-- Fila para mostrar las categorías disponibles -->
-                    <div class="row" id="categorias"></div>
-                </div>
-
+    
     </main>
     <!--Se crea el helper del footer publico-->
     <footer class="page-footer #2962ff blue accent-4">
