@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="es">
+<!--Se crea el helper del header privado-->
+
+<head>
+    <meta charset="utf-8">
+    <!--Import Google Icon Font-->
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+    <title>NetWorld - ' . $title . '</title>
+    <!--Import materialize.css-->
+    <link type="text/css" rel="stylesheet" href="../www/css/materialize.min.css" media="screen,projection" />
+    <link type="text/css" rel="stylesheet" href="../www/css/styles.css" media="screen,projection" />
+    <!--Let browser know website is optimized for mobile-->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <link rel="shotcut icon" href="../www/img/logo.jpg" type="image/x-icon">
+</head>
+
+<body>
+    <header>
+        <div class="navbar-fixed">
+            <nav class="#2962ff blue accent-4">
+                <div class="nav-wrapper">
+                    <a href="index.html" class="brand-logo"><img src="../www/img/logo.jpg" height="60"></a>
+                    <a href="#" data-target="mobile" class="sidenav-trigger"><i class="material-icons">menu</i></a>
+                    <ul class="right hide-on-med-and-down">
+                        <li><a href="carrito.html"><i class="material-icons left">add_shopping_cart</i>Carrito</a></li>
+                        <li><a href="index.html"><i class="material-icons left">view_module</i>Catálogo</a></li>
+                        <li><a href="register.html"><i class="material-icons left">person</i>Crear cuenta</a></li>
+                        <li><a href="login.html"><i class="material-icons left">login</i>Iniciar sesión</a></li>
+                    </ul>
+                </div>
+            </nav>
+        </div>
+        <ul class="sidenav" id="mobile">
+            <li><a href="carrito.html"><i class="material-icons left">add_shopping_cart</i>Carrito</a></li>
+            <li><a href="index.html"><i class="material-icons left">view_module</i>Catálogo</a></li>
+            <li><a href="register.html"><i class="material-icons left">person</i>Crear cuenta</a></li>
+            <li><a href="login.html"><i class="material-icons left">login</i>Iniciar sesión</a></li>
+        </ul>
+    </header>
+    <main>
+
+        <body>
+            <!-- Se elabora el slider del index  -->
+            <title>NetWorld | Inicio</title>
+            <H1 class="black-text text-lighten-3 center-align">NetWorld | Eleva tu nivel</H1>
+            <h5 class="black-text text-lighten-3 center-align">Nuestras ultimas ofertas!!!!</h5>
+            <div class="slider">
+                <ul class="slides">
+                    <li>
+                        <img src="../www/img/slider/index1.jpg"> <!-- random image -->
+                        <div class="caption center-align">
+                            <h1 class="blue-text text-lighten-3">Router ASUS GAMING RT-AX82U</h3>
+                                <h5 class="blue-text text-lighten-3">ASUS presenta su nuevo ROUTER GAMING, ya disponible
+                                    en nuestra tienda.</h5>
+                                <a href="#" class="btn btn-large white black-text waves-effect waves-grey">Más
+                                    información</a>
+                        </div>
+                    </li>
+                    <li>
+                        <img src="../www/img/slider/index2.jpg"> <!-- random image -->
+                        <div class="caption left-align">
+                            <h1 class="grey-text text-lighten-3">Switch D-link DES 105</h3>
+                                <h5 class="grey-text text-lighten-3">El switch más demandado por nuestro clientes esta
+                                    de regreso.</h5>
+                                <a href="#" class="btn btn-large white black-text waves-effect waves-grey">Más
+                                    información</a>
+                        </div>
+                    </li>
+                    <li>
+                        <img src="../www/img/slider/index3.jpg"> <!-- random image -->
+                        <div class="caption right-align">
+                            <h3 class="grey-text text-lighten-3">Hub NetGear</h3>
+                            <h5 class="grey-text text-lighten-3">YA disponible el nuevo HUB para expandir tu red en tu
+                                hogar.</h5>
+                            <a href="../views/public/hub_pasivo.php"
+                                class="btn btn-large white black-text waves-effect waves-grey">Más información</a>
+                        </div>
+                    </li>
+
+                </ul>
+                </section>
+
+
+
+                <!-- Contenedor para mostrar el catálogo de tipos de producto -->
+                <div class="container">
+                    <!-- Título del contenido principal -->
+                    <h4 class="center indigo-text" id="title">Nuestro catálogo</h4>
+                    <!-- Fila para mostrar las categorías disponibles -->
+                    <div class="row" id="categorias"></div>
+                   <body>
+     
+            
+
+    </main>
+    <!--Se crea el helper del footer publico-->
+    <footer class="page-footer #2962ff blue accent-4">
+        <div class="container">
+            <div class="row">
+                <div class="col l6 s12">
+                    <h5 class="white-text">Contactanos</h5>
+                    <h5 id="logo-container" href="#" class="brand-logo">
+                        <i class="material-icons">facebook</i>
+                        NetWorldsv
+                        </a>
+                        <h5 id="logo-container" href="#" class="brand-logo"></h5>
+                        <i class="material-icons">linked_camera</i>
+                        NetWorldsv
+                        </a>
+                        <h5 id="logo-container" href="#" class="brand-logo"></h5>
+                        <i class="material-icons">mail</i>
+                        www.support@networld.com
+                        </a>
+                        <a href="mision">Misión</a>
+                </div>
+                <div class="col l4 offset-l2 s12">
+                    <h5 class="white-text">Otros</h5>
+                    <h5 id="logo-container" href="#" class="brand-logo"></h5>
+                    <i class="material-icons">landscape</i>
+                    NetWorld
+                    </a>
+                    <h5 id="logo-container" href="" class="brand-logo"></h5>
+                    <i class="material-icons">dashboard</i>
+                </div>
+            </div>
+        </div>
+        <div class="footer-copyright">
+            <div class="container center">
+                © 2021 Copyright Text
+            </div>
+        </div>
+    </footer>
+    <script type="text/javascript" src="../www/js/materialize.min.js"></script>
+    <script type="text/javascript" src="../www/js/sweetalert.min.js"></script>
+    <script type="text/javascript" src="../www/js/iniciar.js"></script>
+    <script type="text/javascript" src="../www/js/detail.js"></script>
+    <script type="text/javascript" src="../www/js/index.js"></script>
+    <script type="text/javascript" src="../www/js/account.js"></script>
+    <script type="text/javascript" src="../www/js/components.js"></script>
+</body>
+
+</html>
