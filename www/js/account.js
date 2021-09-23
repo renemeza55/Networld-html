@@ -6,6 +6,68 @@
 // Constante para establecer la ruta y parámetros de comunicación con la API.
 const API = 'http://34.125.63.184/api/public/clientes.php?action=';
 
+// Método manejador de eventos que se ejecuta cuando el documento ha cargado.
+document.addEventListener('DOMContentLoaded', function () {
+    // Se busca en la URL las variables (parámetros) disponibles.
+    let params = new URLSearchParams(location.search);
+    // Se obtienen los datos localizados por medio de las variables.
+    const ID_CLIENTE = params.get('id_cliente');
+
+    let content = '';
+    if (ID_CLIENTE > 0) {
+        // Se establece el menú para cuando se inicia sesión.
+        content = `
+            <div class="navbar-fixed">
+                <nav class="#2962ff blue accent-4">
+                    <div class="nav-wrapper">
+                        <a href="index_publico.php" class="brand-logo"><img src="../../resources/img/logo.jpg" height="60"></a>
+                        <a href="#" data-target="mobile" class="sidenav-trigger"><i class="material-icons">menu</i></a>
+                        <ul class="right hide-on-med-and-down">
+                            <li><a href="#" onclick="openPasswordDialog()"><i class="material-icons left">security</i>Cambiar contraseña</a></li>
+                            <li><a href="index_publico.php"><i class="material-icons left">view_module</i>Catálogo</a></li>
+                            <li><a href="carrito.php"><i class="material-icons left">shopping_cart</i>Carrito</a></li>
+                            <li><a href="historial.php"><i class="material-icons left">history</i>Actividad de sesión</a></li>
+                            <li><a href="#" onclick="logOut()"><i class="material-icons left">close</i>Cerrar sesión</a></li>
+                        </ul>
+                    </div>
+                </nav>
+            </div>
+            <ul class="sidenav" id="mobile">
+                <li><a href="#" onclick="openPasswordDialog()"><i class="material-icons left">security</i>Cambiar contraseña</a></li>
+                <li><a href="index_publico.php"><i class="material-icons left">view_module</i>Catálogo</a></li>
+                <li><a href="carrito.php"><i class="material-icons left">shopping_cart</i>Carrito</a></li>
+                <li><a href="historial.php"><i class="material-icons left">history</i>Actividad de sesión</a></li>
+                <li><a href="#" onclick="logOut()"><i class="material-icons left">close</i>Cerrar sesión</a></li>
+            </ul>
+        `;
+    } else {
+        // Se establece el menú para cuando no se ha iniciado sesión.
+        content = `
+            <div class="navbar-fixed">
+                <nav class="#2962ff blue accent-4">
+                    <div class="nav-wrapper">
+                        <a href="index.html" class="brand-logo"><img src="../www/img/logo.jpg" height="60"></a>
+                        <a href="#" data-target="mobile" class="sidenav-trigger"><i class="material-icons">menu</i></a>
+                        <ul class="right hide-on-med-and-down">
+                            <li><a href="carrito.html"><i class="material-icons left">add_shopping_cart</i>Carrito</a></li>
+                            <li><a href="index.html"><i class="material-icons left">view_module</i>Catálogo</a></li>
+                            <li><a href="register.html"><i class="material-icons left">person</i>Crear cuenta</a></li>
+                            <li><a href="login.html"><i class="material-icons left">login</i>Iniciar sesión</a></li>
+                        </ul>
+                    </div>
+                </nav>
+            </div>
+            <ul class="sidenav" id="mobile">
+                <li><a href="carrito.html"><i class="material-icons left">add_shopping_cart</i>Carrito</a></li>
+                <li><a href="index.html"><i class="material-icons left">view_module</i>Catálogo</a></li>
+                <li><a href="register.html"><i class="material-icons left">person</i>Crear cuenta</a></li>
+                <li><a href="login.html"><i class="material-icons left">login</i>Iniciar sesión</a></li>
+            </ul>
+        `;
+    }
+    document.getElementById('encabezado').innerHTML = content;
+});
+
 /*document.addEventListener('click', function () {
     fetch(API + 'sessionTime', {
         method: 'get'

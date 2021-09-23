@@ -1,10 +1,8 @@
 // Constante para establecer la ruta y parámetros de comunicación con la API.
-//const API_CATALOGO = 'http://34.125.63.184/api/public/catalogo.php?action=';
+const API_CATALOGO = 'http://34.125.63.184/api/public/catalogo.php?action=';
 
 // Método manejador de eventos que se ejecuta cuando el documento ha cargado.
 document.addEventListener('DOMContentLoaded', function () {
-    // Se inicializa el componente Slider para que funcione el carrusel de imágenes.
-    M.Slider.init(document.querySelectorAll('.slider'));
     // Se llama a la función que muestra las categorías disponibles.
     readAllCategorias();
 });

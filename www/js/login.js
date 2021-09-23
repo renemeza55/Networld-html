@@ -15,7 +15,7 @@ document.getElementById('session-form').addEventListener('submit', function (eve
             request.json().then(function (response) {
                 // Se comprueba si la respuesta es satisfactoria, de lo contrario se muestra un mensaje con la excepción.
                 if (response.status) {
-                    sweetAlert(1, response.message, 'index.html');
+                    sweetAlert(1, response.message, 'index.html?id_cliente='+response.id_cliente);
                 } else {
                     sweetAlert(2, response.exception, null);
                 }
