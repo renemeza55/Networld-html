@@ -28,6 +28,9 @@ function readProductosCategoria(id, categoria) {
                 // Se comprueba si la respuesta es satisfactoria, de lo contrario se muestra un mensaje con la excepción.
                 if (response.status) {
                     let content = '';
+                    // Se busca en la URL las variables (parámetros) disponibles.
+                    let params = new URLSearchParams(location.search);
+                    const ID_CLIENTE = params.get('id_cliente');
                     // Se recorre el conjunto de registros devuelto por la API (dataset) fila por fila a través del objeto row.
                     response.dataset.map(function (row) {
                         // Se crean y concatenan las tarjetas con los datos de cada producto.
@@ -36,7 +39,7 @@ function readProductosCategoria(id, categoria) {
                                 <div class="card hoverable">
                                     <div class="card-image">
                                         <img src="../../resources/img/productos/${row.imagen_producto}" class="materialboxed">
-                                        <a href="detalle.html?id=${row.id_producto}" class="btn-floating halfway-fab waves-effect waves-light red tooltipped" data-tooltip="Ver detalle">
+                                        <a href="detalle.html?id=${row.id_producto}&id_cliente=${ID_CLIENTE}" class="btn-floating halfway-fab waves-effect waves-light red tooltipped" data-tooltip="Ver detalle">
                                             <i class="material-icons">add</i>
                                         </a>
                                     </div>

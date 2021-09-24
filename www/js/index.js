@@ -3,9 +3,12 @@ const API_CATALOGO = 'http://34.125.63.184/api/public/catalogo.php?action=';
 
 // Método manejador de eventos que se ejecuta cuando el documento ha cargado.
 document.addEventListener('DOMContentLoaded', function () {
+    
+
     // Se llama a la función que muestra las categorías disponibles.
     readAllCategorias();
 });
+
 
 // Función para obtener y mostrar las categorías disponibles.
 function readAllCategorias() {
@@ -19,10 +22,13 @@ function readAllCategorias() {
                 if (response.status) {
                     let content = '';
                     let url = '';
+                    // Se busca en la URL las variables (parámetros) disponibles.
+    let params = new URLSearchParams(location.search);
+    const ID_CLIENTE = params.get('id_cliente');
                     // Se recorre el conjunto de registros devuelto por la API (dataset) fila por fila a través del objeto row.
                     response.dataset.map(function (row) {
                         // Se define una dirección con los datos de cada categoría para mostrar sus productos en otra página web.
-                        url = `productos.html?id=${row.id_categoria}&nombre=${row.nombre_categoria}`;
+                        url = `productos.html?id=${row.id_categoria}&nombre=${row.nombre_categoria}&id_cliente=${ID_CLIENTE}`;
                         // Se crean y concatenan las tarjetas con los datos de cada categoría.
                         content += `
                             <div class="col s12 m6 l4">

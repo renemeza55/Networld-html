@@ -20,7 +20,7 @@ document.addEventListener('DOMContentLoaded', function () {
             <div class="navbar-fixed">
                 <nav class="#2962ff blue accent-4">
                     <div class="nav-wrapper">
-                        <a href="index_publico.php" class="brand-logo"><img src="../../resources/img/logo.jpg" height="60"></a>
+                        <a href="index.html" class="brand-logo"><img src="../www/img/logo.jpg" height="60"></a>
                         <a href="#" data-target="mobile" class="sidenav-trigger"><i class="material-icons">menu</i></a>
                         <ul class="right hide-on-med-and-down">
                             <li><a href="index.html"><i class="material-icons left">view_module</i>Catálogo</a></li>
