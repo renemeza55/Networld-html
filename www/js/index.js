@@ -22,7 +22,7 @@ function readAllCategorias() {
                     // Se recorre el conjunto de registros devuelto por la API (dataset) fila por fila a través del objeto row.
                     response.dataset.map(function (row) {
                         // Se define una dirección con los datos de cada categoría para mostrar sus productos en otra página web.
-                        url = `productos.php?id=${row.id_categoria}&nombre=${row.nombre_categoria}`;
+                        url = `productos.html?id=${row.id_categoria}&nombre=${row.nombre_categoria}`;
                         // Se crean y concatenan las tarjetas con los datos de cada categoría.
                         content += `
                             <div class="col s12 m6 l4">

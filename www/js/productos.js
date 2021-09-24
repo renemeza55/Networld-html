@@ -36,7 +36,7 @@ function readProductosCategoria(id, categoria) {
                                 <div class="card hoverable">
                                     <div class="card-image">
                                         <img src="../../resources/img/productos/${row.imagen_producto}" class="materialboxed">
-                                        <a href="detalle.php?id=${row.id_producto}" class="btn-floating halfway-fab waves-effect waves-light red tooltipped" data-tooltip="Ver detalle">
+                                        <a href="detalle.html?id=${row.id_producto}" class="btn-floating halfway-fab waves-effect waves-light red tooltipped" data-tooltip="Ver detalle">
                                             <i class="material-icons">add</i>
                                         </a>
                                     </div>
