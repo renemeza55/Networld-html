@@ -15,24 +15,27 @@ document.addEventListener('DOMContentLoaded', function () {
 
     let content = '';
     if (ID_CLIENTE > 0) {
+         // Se busca en la URL las variables (parámetros) disponibles.
+         let params = new URLSearchParams(location.search);
+         const ID_CLIENTES = params.get('id_cliente');
         // Se establece el menú para cuando se inicia sesión.
         content = `
             <div class="navbar-fixed">
                 <nav class="#2962ff blue accent-4">
                     <div class="nav-wrapper">
-                        <a href="index.html" class="brand-logo"><img src="../www/img/logo.jpg" height="60"></a>
+                        <a href="index.html?id_cliente=${ID_CLIENTES}" class="brand-logo"><img src="../www/img/logo.jpg" height="60"></a>
                         <a href="#" data-target="mobile" class="sidenav-trigger"><i class="material-icons">menu</i></a>
                         <ul class="right hide-on-med-and-down">
-                            <li><a href="index.html"><i class="material-icons left">view_module</i>Catálogo</a></li>
-                            <li><a href="carrito.html"><i class="material-icons left">shopping_cart</i>Carrito</a></li>
+                            <li><a href="index.html?id_cliente=${ID_CLIENTES}"><i class="material-icons left">view_module</i>Catálogo</a></li>
+                            <li><a href="carrito.html?id_cliente=${ID_CLIENTES}"><i class="material-icons left">shopping_cart</i>Carrito</a></li>
                             <li><a href="#" onclick="logOut()"><i class="material-icons left">close</i>Cerrar sesión</a></li>
                         </ul>
                     </div>
                 </nav>
             </div>
             <ul class="sidenav" id="mobile">
-                <li><a href="index.html"><i class="material-icons left">view_module</i>Catálogo</a></li>
-                <li><a href="carrito.html"><i class="material-icons left">shopping_cart</i>Carrito</a></li>
+                <li><a href="index.html?id_cliente=${ID_CLIENTES}"><i class="material-icons left">view_module</i>Catálogo</a></li>
+                <li><a href="carrito.html?id_cliente=${ID_CLIENTES}"><i class="material-icons left">shopping_cart</i>Carrito</a></li>
                 <li><a href="#" onclick="logOut()"><i class="material-icons left">close</i>Cerrar sesión</a></li>
             </ul>
         `;
