@@ -18,31 +18,10 @@
 </head>
 
 <body>
-    <header>
-        <div class="navbar-fixed">
-            <nav class="#2962ff blue accent-4">
-                <div class="nav-wrapper">
-                    <a href="index.html" class="brand-logo"><img src="../www/img/logo.jpg" height="60"></a>
-                    <a href="#" data-target="mobile" class="sidenav-trigger"><i class="material-icons">menu</i></a>
-                    <ul class="right hide-on-med-and-down">
-                        <li><a href="index.html"><i class="material-icons left">view_module</i>Catálogo</a></li>
-                        <li><a href="register.html"><i class="material-icons left">person</i>Crear cuenta</a></li>
-                        <li><a href="login.html"><i class="material-icons left">login</i>Iniciar sesión</a></li>
-                    </ul>
-                </div>
-            </nav>
-        </div>
-        <ul class="sidenav" id="mobile">
-            <li><a href="index.html"><i class="material-icons left">view_module</i>Catálogo</a></li>
-            <li><a href="register.html"><i class="material-icons left">person</i>Crear cuenta</a></li>
-            <li><a href="login.html"><i class="material-icons left">login</i>Iniciar sesión</a></li>
-        </ul>
+    <header id="encabezado">
     </header>
     <main>
-
-
         <head>
-
             <!--Let browser know website is optimized for mobile-->
             <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
@@ -67,16 +46,19 @@
                     </div>
                 </div>
                 <div class="row center-align">
-                    <button type="submit" class="btn waves-effect blue tooltipped" data-tooltip="Ingresar"><i
-                            class="material-icons">send</i></button>
+                    <button type="submit" class="btn waves-effect blue tooltipped" data-tooltip="Ingresar">
+                        <i class="material-icons">send</i>
+                    </button>
                     <p>
                         <a href="../www/recuperar.html">He olvidado mi contraseña</a>
+                    </p>
                 </div>
             </form>
-
-
             <H5 class="black-text text-lighten-3 center-align">¿Es nuevo? Por favor de <a
-                    href="../www/register.html">click aquí</a> para registrarse</H5>
+               href="../www/register.html">click aquí</a> para registrarse
+            </H5>
+        </div>
+    </main>
 </body>
 
 </main>
@@ -119,9 +101,10 @@
 </footer>
 <script type="text/javascript" src="../www/js/materialize.min.js"></script>
 <script type="text/javascript" src="../www/js/sweetalert.min.js"></script>
-<script type="text/javascript" src="../www/js/iniciar.js"></script>
 <script type="text/javascript" src="../www/js/components.js"></script>
+<script type="text/javascript" src="../www/js/account.js"></script>
 <script type="text/javascript" src="../www/js/login.js"></script>
+<script type="text/javascript" src="../www/js/iniciar.js"></script>
 </body>
 
 </html>

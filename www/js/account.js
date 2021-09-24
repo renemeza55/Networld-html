@@ -23,20 +23,16 @@ document.addEventListener('DOMContentLoaded', function () {
                         <a href="index_publico.php" class="brand-logo"><img src="../../resources/img/logo.jpg" height="60"></a>
                         <a href="#" data-target="mobile" class="sidenav-trigger"><i class="material-icons">menu</i></a>
                         <ul class="right hide-on-med-and-down">
-                            <li><a href="#" onclick="openPasswordDialog()"><i class="material-icons left">security</i>Cambiar contraseña</a></li>
-                            <li><a href="index_publico.php"><i class="material-icons left">view_module</i>Catálogo</a></li>
-                            <li><a href="carrito.php"><i class="material-icons left">shopping_cart</i>Carrito</a></li>
-                            <li><a href="historial.php"><i class="material-icons left">history</i>Actividad de sesión</a></li>
+                            <li><a href="index.html"><i class="material-icons left">view_module</i>Catálogo</a></li>
+                            <li><a href="carrito.html"><i class="material-icons left">shopping_cart</i>Carrito</a></li>
                             <li><a href="#" onclick="logOut()"><i class="material-icons left">close</i>Cerrar sesión</a></li>
                         </ul>
                     </div>
                 </nav>
             </div>
             <ul class="sidenav" id="mobile">
-                <li><a href="#" onclick="openPasswordDialog()"><i class="material-icons left">security</i>Cambiar contraseña</a></li>
-                <li><a href="index_publico.php"><i class="material-icons left">view_module</i>Catálogo</a></li>
-                <li><a href="carrito.php"><i class="material-icons left">shopping_cart</i>Carrito</a></li>
-                <li><a href="historial.php"><i class="material-icons left">history</i>Actividad de sesión</a></li>
+                <li><a href="index.html"><i class="material-icons left">view_module</i>Catálogo</a></li>
+                <li><a href="carrito.html"><i class="material-icons left">shopping_cart</i>Carrito</a></li>
                 <li><a href="#" onclick="logOut()"><i class="material-icons left">close</i>Cerrar sesión</a></li>
             </ul>
         `;
@@ -102,36 +98,6 @@ function openPasswordDialog() {
 }
 
 // Método manejador de eventos que se ejecuta cuando se envía el formulario de cambiar clave.
-document.getElementById('password-form').addEventListener('submit', function (event) {
-    // Se evita recargar la página web después de enviar el formulario.
-    event.preventDefault();
-
-    fetch(API + 'changePassword', {
-        method: 'post',
-        body: new FormData(document.getElementById('password-form'))
-    }).then(function (request) {
-        // Se verifica si la petición es correcta, de lo contrario se muestra un mensaje indicando el problema.
-        if (request.ok) {
-            request.json().then(function (response) {
-                // Se comprueba si la respuesta es satisfactoria, de lo contrario se muestra un mensaje con la excepción.
-                if (response.status) {
-                    // Se cierra la caja de dialogo (modal) del formulario.
-                    let instance = M.Modal.getInstance(document.getElementById('password-modal'));
-                    instance.close();
-                    sweetAlert(1, response.message, null);
-                } else {
-                    sweetAlert(2, response.exception, null);
-                }
-            });
-        } else {
-            console.log(request.status + ' ' + request.statusText);
-        }
-    }).catch(function (error) {
-        console.log(error);
-    });
-});
-
-
 // Función para mostrar un mensaje de confirmación al momento de cerrar sesión.
 function logOut() {
     // Se diseña la notificación
@@ -153,7 +119,7 @@ function logOut() {
                     request.json().then(function (response) {
                         // Se comprueba si la respuesta es satisfactoria, de lo contrario se muestra un mensaje con la excepción.
                         if (response.status) {
-                            sweetAlert(1, response.message, 'index_publico.php'); 
+                            sweetAlert(1, response.message, 'index.html'); 
                         } else {
                             sweetAlert(2, response.exception, null);
                         }

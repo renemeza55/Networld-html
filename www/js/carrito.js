@@ -48,7 +48,7 @@ function readOrderDetail() {
                     // Se inicializa el componente Tooltip asignado a los enlaces para que funcionen las sugerencias textuales.
                     M.Tooltip.init(document.querySelectorAll('.tooltipped'));
                 } else {
-                    sweetAlert(4, response.exception, 'index_publico.php');
+                    sweetAlert(4, response.exception, 'index.html');
                 }
             });
         } else {
@@ -124,7 +124,7 @@ function finishOrder() {
                     request.json().then(function (response) {
                         // Se comprueba si la respuesta es satisfactoria, de lo contrario se muestra un mensaje con la excepción.
                         if (response.status) {
-                            sweetAlert(1, response.message, 'index_publico.php');
+                            sweetAlert(1, response.message, 'index.html');
                         } else {
                             sweetAlert(2, response.exception, null);
                         }
