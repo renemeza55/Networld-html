@@ -9,6 +9,10 @@ document.addEventListener('DOMContentLoaded', function () {
 
 // Función para obtener el detalle del pedido (carrito de compras).
 function readOrderDetail() {
+    let params = new URLSearchParams(location.search);
+    let IDC = params.get('nombre_cliente');
+    let data = new FormData();
+    data.append('id_cliente', IDC);
     fetch(API_CARRITO + 'readOrderDetail', {
         method: 'get'
     }).then(function (request) {
@@ -47,8 +51,14 @@ function readOrderDetail() {
                     document.getElementById('pago').textContent = total.toFixed(2);
                     // Se inicializa el componente Tooltip asignado a los enlaces para que funcionen las sugerencias textuales.
                     M.Tooltip.init(document.querySelectorAll('.tooltipped'));
+                    let params2 = new URLSearchParams(location.search);
+                if(!params2.has('compra')){
+                 var url = new URL(location);
+                url.searchParams.append('compra', response.id_compra);
+                location.href = url;
+                }
                 } else {
-                    sweetAlert(4, response.exception, 'index.html');
+                    sweetAlert(4, response.exception, 'index.html?nombre_cliente=' + IDC);
                 }
             });
         } else {
