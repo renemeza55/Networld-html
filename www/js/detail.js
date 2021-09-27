@@ -60,12 +60,16 @@ document.getElementById('shopping-form').addEventListener('submit', function (ev
         method: 'post',
         body: new FormData(document.getElementById('shopping-form'))
     }).then(function (request) {
+        // Se busca en la URL las variables (parámetros) disponibles.
+        let params = new URLSearchParams(location.search);
+        const ID_CLIENTES = params.get('id_cliente');
+       // Se establece el menú para cuando se inicia sesión.
         // Se verifica si la petición es correcta, de lo contrario se muestra un mensaje indicando el problema.
         if (request.ok) {
             request.json().then(function (response) {
                 // Se comprueba si la respuesta es satisfactoria, de lo contrario se constata si el cliente ha iniciado sesión.
                 if (response.status) {
-                    sweetAlert(1, response.message, 'carrito.html');
+                    sweetAlert(1, response.message, 'carrito.html?id_compra=1?id_cliente=1');
                 } else {
                     // Se verifica si el cliente ha iniciado sesión para mostrar la excepción, de lo contrario se direcciona para que se autentique. 
                     if (response.session) {

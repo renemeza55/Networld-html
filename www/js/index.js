@@ -3,7 +3,7 @@ const API_CATALOGO = 'http://34.125.63.184/api/public/catalogo.php?action=';
 
 // Método manejador de eventos que se ejecuta cuando el documento ha cargado.
 document.addEventListener('DOMContentLoaded', function () {
-    
+
 
     // Se llama a la función que muestra las categorías disponibles.
     readAllCategorias();
@@ -23,8 +23,8 @@ function readAllCategorias() {
                     let content = '';
                     let url = '';
                     // Se busca en la URL las variables (parámetros) disponibles.
-    let params = new URLSearchParams(location.search);
-    const ID_CLIENTE = params.get('id_cliente');
+                    let params = new URLSearchParams(location.search);
+                    const ID_CLIENTE = params.get('id_cliente');
                     // Se recorre el conjunto de registros devuelto por la API (dataset) fila por fila a través del objeto row.
                     response.dataset.map(function (row) {
                         // Se define una dirección con los datos de cada categoría para mostrar sus productos en otra página web.

@@ -40,10 +40,7 @@
 
         <!-- Fila para mostrar un botón que finaliza el pedido -->
         <div class="row right-align">
-            <button type="button" class="" data-tooltip="Finalizar pedido"><i class="material-icons"></i></button>
-        </div>
-        <div class="row right-align">
-            <button type="button" class="btn waves-effect blue tooltipped" data-tooltip="Finalizar pedido"><i
+            <button type="button" onclick="finishOrder()" class="btn waves-effect blue tooltipped" data-tooltip="Finalizar pedido"><i
                     class="material-icons">payment</i></button>
         </div>
         <!-- Fila para mostrar un enlace con la dirección de la página web principal para seguir comprando -->
@@ -59,6 +56,30 @@
             momento que se haga la entrega en la dirección especificada.
         </h5>
     </main>
+
+    <!-- Componente Modal para mostrar una caja de dialogo -->
+<div id="item-modal" class="modal">
+    <div class="modal-content">
+        <!-- Título para la caja de dialogo -->
+        <h4 class="center-align">Cambiar cantidad</h4>
+        <!-- Formulario para cambiar la cantidad de producto -->
+        <form method="post" id="item-form">
+            <!-- Campo oculto para asignar el id del registro al momento de modificar -->
+            <input type="number" id="id_detalle_compra" name="id_detalle_compra" class="hide"/>
+            <div class="row">
+                <div class="input-field col s12 m4 offset-m4">
+                    <i class="material-icons prefix">list</i>
+                    <input type="number" id="cantidad_producto" name="cantidad_producto" min="1" class="validate" required/>
+                    <label for="cantidad_producto">Cantidad</label>
+                </div>
+            </div>
+            <div class="row center-align">
+                <a href="#" class="btn waves-effect grey tooltipped modal-close" data-tooltip="Cancelar"><i class="material-icons">cancel</i></a>
+                <button type="submit" class="btn waves-effect blue tooltipped" data-tooltip="Guardar"><i class="material-icons">save</i></button>
+            </div>
+        </form>
+    </div>
+</div>
     <!--Se crea el helper del footer publico-->
     <footer class="page-footer #2962ff blue accent-4">
         <div class="container">

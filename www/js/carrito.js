@@ -10,7 +10,7 @@ document.addEventListener('DOMContentLoaded', function () {
 // Función para obtener el detalle del pedido (carrito de compras).
 function readOrderDetail() {
     let params = new URLSearchParams(location.search);
-    let IDC = params.get('nombre_cliente');
+    let IDC = params.get('id_cliente');
     let data = new FormData();
     data.append('id_cliente', IDC);
     fetch(API_CARRITO + 'readOrderDetail', {
@@ -58,7 +58,7 @@ function readOrderDetail() {
                 location.href = url;
                 }
                 } else {
-                    sweetAlert(4, response.exception, 'index.html?nombre_cliente=' + IDC);
+                    sweetAlert(4, response.exception, 'index.html?id_cliente=' + IDC);
                 }
             });
         } else {
